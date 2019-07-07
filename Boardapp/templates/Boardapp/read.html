@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>READ</title>
+</head>
+<body>
+    <!--글쓰기버튼-->
+    <a href = "{% url 'create' %}">글쓰기</a>
+    
+    <!--블로그 글 띄우기-->
+    {% for blog in blogs %}
+
+        <h2>{{blog.title}}</h2>
+        <h4>{{blog.pub_date}}</h4>
+        <p>{{blog.body}}</p>
+        <a href="{% url 'update' blog.id %}">수정</a>
+        <a href="{% url 'delete' blog.id %}">삭제</a>
+
+        <hr>
+
+    {% endfor %}
+</body>
+</html>
