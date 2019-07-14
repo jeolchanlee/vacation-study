@@ -7,9 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'css/cover.css' %}"> <!--static파일 중 cover.css를 적용한다.-->
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
   <title>My Board</title>
-  
+
 </head>
+
+
 <body class = "text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto">
@@ -22,15 +28,72 @@
             </nav>-->
           </div>
         </header>
-      
-        <main role="main" class="inner cover">
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel"> 
+	
+            <!--페이지-->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!--페이지-->
+          
+            <div class="carousel-inner">
+              <!--슬라이드1-->
+              <div class="item active"> 
+                <img src="http://www.blueb.co.kr/SRC2/_image/w01.jpg" style="width:100%" alt="First slide">
+                <div class="container">
+                  <div class="carousel-caption">
+                    <h1>Welcome</h1>
+                    <p> - </p>
+                  </div>
+                </div>
+              </div>
+              <!--슬라이드1-->
+          
+              <!--슬라이드2-->
+              <div class="item"> 
+                <img src="http://www.blueb.co.kr/SRC2/_image/w02.jpg" style="width:100%" data-src="" alt="Second slide">
+                <div class="container">
+                  <div class="carousel-caption">
+                    <h1>Good</h1>
+                    <p> - </p>
+                  </div>
+                </div>
+              </div>
+              <!--슬라이드2-->
+              
+              <!--슬라이드3-->
+              <div class="item"> 
+                <img src="http://www.blueb.co.kr/SRC2/_image/w03.jpg" style="width:100%" data-src="" alt="Third slide">
+                <div class="container">
+                  <div class="carousel-caption">
+                    <h1>Nice</h1>
+                    <p> - </p>
+                  </div>
+                </div>
+              </div>
+              <!--슬라이드3-->
+            </div>
+            
+            <!--이전, 다음 버튼-->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> 
+            <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> 
+          </div>
+
+
+    
+
+
+    <main role="main" class="inner cover">
           <h1 class="cover-heading">My Board</h1>
           <br><br>
           <!--<p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>-->
           <p class="lead">
             <a href="{% url 'read' %}" class="btn btn-lg btn-secondary">게시물 작성하기</a>
           </p>
-        </main>
+    </main>    
       
         <footer class="mastfoot mt-auto">
           <div class="inner">
