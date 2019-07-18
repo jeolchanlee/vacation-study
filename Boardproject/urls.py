@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 import Boardapp.views
 import Boardapp.urls
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Boardapp.views.welcome, name='welcome'),
     path('board/', include(Boardapp.urls)),
+    path('login/', include('login.urls')),
+    
 ]

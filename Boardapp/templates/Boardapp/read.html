@@ -11,11 +11,31 @@
     <!--블로그 글 띄우기-->
     {% for blog in blogs %}
 
-        <h2>{{blog.title}}</h2>
+       <a href="{% url 'document_detail' blog.id %}" ><h2>{{blog.title}}</h2></a>
         <h4>{{blog.pub_date}}</h4>
         <p>{{blog.body}}</p>
         <a href="{% url 'update' blog.id %}">수정</a>
-        <a href="{% url 'delete' blog.id %}">삭제</a>
+        <a href="{% url 'delete' blog.id %}">삭제</a><br><br>
+
+
+        
+    <!--댓글-->
+    <form action="{% url 'document_detail' blog.id %}" method = "POST">
+        {%csrf_token%}
+        {{comment_form}}
+            <input type = "submit" value="Comment" class="btn btn-outline-primary">
+    </form>
+
+    <table class = 'table table-striped'>
+        {% for comment in comments %}
+        <p>{{comment.text}}</p>
+        <tr>
+           
+            <td a href = "{% url 'board:comment_delete' comment.id %}">삭제하기</td>
+            <td a href = "{% url 'board:comment_update' comment.id %}">수정하기</td>
+        </tr>
+        {% endfor %}
+    </table>
 
         <hr>
 

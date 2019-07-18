@@ -82,6 +82,11 @@
             <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> 
           </div>
 
+          <br><br><br>
+          <a href="{% url 'login' %}">로그인</a>
+          <a href="{% url 'signup' %}">회원가입</a>
+          <a href="{% url 'logout' %}">로그아웃</a>
+
 
     
 
@@ -91,7 +96,7 @@
           <br><br>
           <!--<p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>-->
           <p class="lead">
-            <a href="{% url 'read' %}" class="btn btn-lg btn-secondary">게시물 작성하기</a>
+            <a href="{% url 'login' %}" class="btn btn-lg btn-secondary">게시물 작성하기</a>
           </p>
     </main>    
       
